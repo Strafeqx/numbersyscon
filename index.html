@@ -6,7 +6,6 @@
     <title>Number System Converter</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
-        /* General Styles */
         #backgroundVideo {
             position: fixed;
             top: 0;
@@ -155,21 +154,15 @@
         }
 
         @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-                height: auto;
-            }
-
             .wrapper {
                 flex-direction: column;
-                width: 100%;
+                width: 95%;
                 max-width: 100%;
-                padding: 10px;
             }
 
             .left-section, .right-section {
                 width: 100%;
-                padding: 15px;
+                padding: 20px;
             }
 
             .social-icons {
@@ -178,26 +171,14 @@
 
             input {
                 width: 100%;
-                font-size: 14px;
             }
 
-            h1, h2 {
-                font-size: 20px;
-                text-align: center;
+            #backgroundVideo {
+                display: none; /* Hide the video on mobile */
             }
 
-            img {
-                width: 90%;
-            }
-
-            .styled-link {
-                font-size: 16px;
-                padding: 10px 15px;
-            }
-
-            iframe {
-                width: 100%;
-                height: 120px;
+            body {
+                background: #1e1e1e url('toji.jpg') no-repeat center center/cover; /* Fallback background for mobile */
             }
         }
     </style>
@@ -219,9 +200,7 @@
                 <a href="https://www.facebook.com/james.pino.737" target="_blank"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.tiktok.com/@onlymanga5" target="_blank"><i class="fab fa-tiktok"></i></a>
             </div>
-            
 
-            <!-- Spotify Embed -->
             <div class="spotify-embed">
                 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4k3xDpAdBuM17mNNHhOZkK?utm_source=generator" 
                     width="100%" 
