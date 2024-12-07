@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number System Converter</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        #backgroundVideo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+            opacity: 0.7;
+            object-position: center;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #1e1e1e;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: row;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            width: 80%;
+            max-width: 900px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.5s ease, transform 1.5s ease;
+        }
+
+        .wrapper.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .left-section, .right-section {
+            width: 50%;
+            padding: 30px;
+        }
+
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left-section h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #ff5733;
+        }
+
+        .left-section p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border-radius: 50%;
+            color: #1e1e1e;
+            font-size: 20px;
+            text-decoration: none;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #ff5733;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #ffdd57;
+            text-align: center;
+        }
+
+        input {
+            padding: 12px;
+            width: 90%;
+            margin: 15px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+            outline: none;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 8px 0;
+            font-size: 18px;
+        }
+
+        li strong {
+            color: #fff;
+        }
+
+        .styled-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffdd57;
+            background: linear-gradient(90deg, #ff5733, #c70039);
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .styled-link:hover {
+            background: linear-gradient(90deg, #c70039, #ff5733);
+            transform: scale(1.05);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(255, 87, 51, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+                width: 95%;
+                max-width: 100%;
+            }
+
+            .left-section, .right-section {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay id="backgroundVideo">
+        <source loop src="1127.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="wrapper" id="contentWrapper">
+        <div class="left-section">
+            <img src="hmmm.jpg" alt="Berserk Tattoo" style="width: 70%; border-radius: 10px; margin-bottom: 15px;">
+            <h1>Welcome to the Converter</h1>
+            <p>Convert decimal numbers into binary, octal, and hexadecimal forms! Also, my socials are down below! If, you need any help!</p>
+
+            <div class="social-icons">
+                <a href="https://www.instagram.com/jp.jie/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/james.pino.737" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.tiktok.com/@onlymanga5" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+            
+
+            <!-- Spotify Embed -->
+            <div class="spotify-embed">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4k3xDpAdBuM17mNNHhOZkK?utm_source=generator" 
+                    width="100%" 
+                    height="152" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+        <div class="right-section">
+            <h2>Number System Results</h2>
+            <input type="number" id="numberInput" placeholder="Enter a decimal number" />
+            <ul>
+                <li>Binary: <strong id="binaryResult">-</strong></li>
+                <li>Octal: <strong id="octalResult">-</strong></li>
+                <li>Hexadecimal: <strong id="hexResult">-</strong></li>
+            </ul>
+            <a href="explanation.html" class="styled-link">Why Its Good</a>
+            <img src="numbersys.png" alt="Dark Vibes" style="width: 100%; border-radius: 10px; margin-top: 15px;">
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('backgroundVideo');
+        const wrapper = document.getElementById('contentWrapper');
+        const numberInput = document.getElementById('numberInput');
+        const binaryResult = document.getElementById('binaryResult');
+        const octalResult = document.getElementById('octalResult');
+        const hexResult = document.getElementById('hexResult');
+
+            wrapper.classList.add('visible');
+        
+        numberInput.addEventListener('input', () => {
+            const number = parseInt(numberInput.value);
+
+            if (!isNaN(number)) {
+                binaryResult.textContent = number.toString(2);
+                octalResult.textContent = number.toString(8);
+                hexResult.textContent = number.toString(16).toUpperCase();
+            } else {
+                binaryResult.textContent = '-';
+                octalResult.textContent = '-';
+                hexResult.textContent = '-';
+            }
+        });
+    </script>
+</body>
+</html>
