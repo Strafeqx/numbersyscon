@@ -6,6 +6,7 @@
     <title>Number System Converter</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
+        /* General Styles */
         #backgroundVideo {
             position: fixed;
             top: 0;
@@ -154,15 +155,21 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                height: auto;
+            }
+
             .wrapper {
                 flex-direction: column;
-                width: 95%;
+                width: 100%;
                 max-width: 100%;
+                padding: 10px;
             }
 
             .left-section, .right-section {
                 width: 100%;
-                padding: 20px;
+                padding: 15px;
             }
 
             .social-icons {
@@ -171,6 +178,26 @@
 
             input {
                 width: 100%;
+                font-size: 14px;
+            }
+
+            h1, h2 {
+                font-size: 20px;
+                text-align: center;
+            }
+
+            img {
+                width: 90%;
+            }
+
+            .styled-link {
+                font-size: 16px;
+                padding: 10px 15px;
+            }
+
+            iframe {
+                width: 100%;
+                height: 120px;
             }
         }
     </style>
@@ -220,15 +247,14 @@
     </div>
 
     <script>
-        const video = document.getElementById('backgroundVideo');
         const wrapper = document.getElementById('contentWrapper');
         const numberInput = document.getElementById('numberInput');
         const binaryResult = document.getElementById('binaryResult');
         const octalResult = document.getElementById('octalResult');
         const hexResult = document.getElementById('hexResult');
 
-            wrapper.classList.add('visible');
-        
+        wrapper.classList.add('visible');
+
         numberInput.addEventListener('input', () => {
             const number = parseInt(numberInput.value);
 
